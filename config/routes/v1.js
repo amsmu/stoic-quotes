@@ -14,8 +14,8 @@ router
   .post('/api-one', policies.authorizedRequest, function(req, res, next) {
     controllers.ModelOneController.sampleApiOne(req, res);
   })
-  .get('/api-two', policies.authorizedRequest, function(req, res, next) {
-    //api two routing here
+  .get('/stoic-quote', function(req, res, next) {
+    controllers.StoicismController.getRandomStoicQuote(req, res);
   });
 
 module.exports = router;
